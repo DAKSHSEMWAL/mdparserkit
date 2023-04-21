@@ -1,7 +1,3 @@
-# GitHub Actions Workflow responsible for cleaning up the template repository from
-# the template-specific files and configurations. This workflow is supposed to be triggered automatically
-# when a new template-based repository has been created.
-
 name: Template Cleanup
 on:
   push:
@@ -17,18 +13,22 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       # Setup Java
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v2
         with:
-          distribution: 'zulu'
           java-version: '17'
       # Setup Gradle
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: '7.3'
+          java-home: ${{ env.JAVA_HOME }}
       # Cleanup project
       - name: Cleanup
-        run: gradle -b ../../buildSrc/src/main/kotlin/cleanup.gradle.kts
+        run: |
+          cd buildSrc/src/main/kotlin
+          gradle -b cleanup.gradle.kts
       # Commit modified files
       - name: Commit files
         run: |
