@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
         targetSdk = libs.versions.target.sdk.version.get().toInt()
-        namespace = "com.daksh.mdparserkit.library.compose"
+        namespace = "com.daksh.mdparserkit.core"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -44,20 +44,11 @@ android {
 }
 
 dependencies {
-    implementation(projects.mdparserkitcore)
-    implementation(libs.androidx.appcompat)
+    implementation(libs.compose.ui.text)
     implementation(libs.androidx.core.ktx)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling)
     implementation(libs.compose.foundation)
-    implementation(libs.compose.material)
-
-    testImplementation(libs.junit)
-    
-    debugImplementation(libs.compose.ui.test.manifest)
-    androidTestImplementation(libs.compose.ui.test.junit4)
-    androidTestImplementation(libs.androidx.test.runner)
-    androidTestImplementation(libs.androidx.test.ext.junit)
 }

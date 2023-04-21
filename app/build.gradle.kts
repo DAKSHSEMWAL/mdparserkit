@@ -56,9 +56,9 @@ android {
 }
 
 dependencies {
-    implementation(projects.libraryAndroid)
     implementation(projects.libraryCompose)
-    implementation(projects.libraryKotlin)
+    implementation(projects.mdparserkitcore)
+
 
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraint.layout)

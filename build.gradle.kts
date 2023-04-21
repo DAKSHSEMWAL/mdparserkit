@@ -3,7 +3,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id("com.android.application") apply false
     id("com.android.library") apply false
-    kotlin("android") apply false
+    kotlin("android") apply false version "1.8.20"
     alias(libs.plugins.detekt)
     alias(libs.plugins.versions)
     cleanup
