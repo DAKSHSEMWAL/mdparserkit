@@ -28,7 +28,7 @@ tasks.register("templateCleanup") {
         )
         file("buildSrc/src/main/java/Coordinates.kt").replace(
             "com.ncorti.kotlin.template",
-            "com.github.$owner.$name"
+            "com.$owner.$name"
         )
 
         file("buildSrc/src/main/kotlin/publish.gradle.kts").apply {
