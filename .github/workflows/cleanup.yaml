@@ -28,7 +28,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       # Cleanup project
       - name: Cleanup
-        run: gradle -b cleanup.gradle.kts
+        run: gradle -b ../../buildSrc/src/main/kotlin/cleanup.gradle.kts
       # Commit modified files
       - name: Commit files
         run: |
