@@ -27,7 +27,7 @@ tasks.register("templateCleanup") {
             "rootProject.name = (\"$name\")"
         )
         file("buildSrc/src/main/java/Coordinates.kt").replace(
-            "com.ncorti.kotlin.template",
+            "com.daksh.mdparserkit",
             "com.$owner.$name"
         )
 
@@ -93,7 +93,7 @@ fun changePackageName(owner: String, name: String) {
         it.walk().filter {
             it.isFile && (it.extension == "kt" || it.extension == "kts" || it.extension == "xml")
         }.forEach {
-            it.replace("com.ncorti.kotlin.template", "com.github.$owner.$name")
+            it.replace("com.daksh.mdparserkit", "com.github.$owner.$name")
         }
     }
     srcDirectories().forEach {
@@ -102,7 +102,7 @@ fun changePackageName(owner: String, name: String) {
             .forEach {
                 val newDir = File(it, "com/github/$owner/$name")
                 newDir.parentFile.mkdirs()
-                File(it, "com/ncorti/kotlin/template").renameTo(newDir)
+                File(it, "com.daksh.mdparserkit").renameTo(newDir)
                 File(it, "com/ncorti").deleteRecursively()
             }
     }

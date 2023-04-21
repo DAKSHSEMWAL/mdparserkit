@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
         targetSdk = libs.versions.target.sdk.version.get().toInt()
-        namespace = "com.ncorti.kotlin.template.library.compose"
+        namespace = "com.daksh.mdparserkit.library.compose"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
