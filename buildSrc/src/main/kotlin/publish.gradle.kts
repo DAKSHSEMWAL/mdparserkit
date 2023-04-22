@@ -49,6 +49,8 @@ publishing {
     publications {
         create<MavenPublication>("release") {
             afterEvaluate {
+                groupId = PUBLISHING_GROUP
+                version = "1.1"
                 artifactId = "mdparserkitcore"
                 if (plugins.hasPlugin("com.android.library")) {
                     from(components["release"])
