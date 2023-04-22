@@ -64,6 +64,7 @@ publishing {
                 if (!"USE_SNAPSHOT".byProperty.isNullOrBlank()) {
                     version = "$version-SNAPSHOT"
                 }
+                name.set("mdparserkitcore")
                 description.set("MDParserKit Core is a library that provides the functionality to parse markdown text and convert it into an AnnotatedString with appropriate styles.")
                 url.set("https://github.com/DAKSHSEMWAL/mdparserkit")
 
