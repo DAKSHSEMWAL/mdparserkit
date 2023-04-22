@@ -31,7 +31,7 @@ publishing {
     repositories {
         maven {
             name = "nexus"
-            url = uri("https://s01.oss.sonatype.org/service/local/")
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
                 username = "NEXUS_USERNAME".byProperty
                 password = "NEXUS_PASSWORD".byProperty
@@ -51,7 +51,8 @@ publishing {
         create<MavenPublication>("release") {
             afterEvaluate {
                 groupId = PUBLISHING_GROUP
-                version = "1.1"
+                version = "1.0"
+                artifactId = "mdparserkitcore"
                 if (plugins.hasPlugin("com.android.library")) {
                     from(components["release"])
                 } else {
