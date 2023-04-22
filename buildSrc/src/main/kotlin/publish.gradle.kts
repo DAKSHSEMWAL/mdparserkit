@@ -60,8 +60,8 @@ publishing {
                 if (!"USE_SNAPSHOT".byProperty.isNullOrBlank()) {
                     version = "$version-SNAPSHOT"
                 }
-                description.set("A template for Kotlin Android projects")
-                url.set("https://github.com/cortinico/kotlin-android-template/")
+                description.set("MDParserKit Core is a library that provides the functionality to parse markdown text and convert it into an AnnotatedString with appropriate styles.")
+                url.set("https://github.com/DAKSHSEMWAL/mdparserkit")
 
                 licenses {
                     license {
@@ -71,18 +71,18 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("cortinico")
-                        name.set("Nicola Corti")
+                        id.set("dakshsemwal")
+                        name.set("Daksh Semwal")
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/cortinico/kotlin-android-template.git")
-                    developerConnection.set("scm:git:ssh://github.com/cortinico/kotlin-android-template.git")
-                    url.set("https://github.com/cortinico/kotlin-android-template/")
+                    connection.set("scm:git:git://github.com/DAKSHSEMWAL/mdparserkit.git")
+                    developerConnection.set("scm:git:ssh://github.com/DAKSHSEMWAL/mdparserkit.git")
+                    url.set("https://github.com/DAKSHSEMWAL/mdparserkit")
                 }
                 issueManagement {
                     system.set("GitHub Issues")
-                    url.set("https://github.com/cortinico/kotlin-android-template/issues")
+                    url.set("https://github.com/DAKSHSEMWAL/mdparserkit/issues")
                 }
             }
         }
