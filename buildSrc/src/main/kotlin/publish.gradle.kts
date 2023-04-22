@@ -1,5 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.tasks.bundling.Jar
+import org.gradle.internal.impldep.org.bouncycastle.cms.RecipientId.password
 
 /**
  * Precompiled script plugin from:
@@ -30,7 +31,7 @@ publishing {
     repositories {
         maven {
             name = "nexus"
-            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            url = uri("https://s01.oss.sonatype.org/service/local/")
             credentials {
                 username = "NEXUS_USERNAME".byProperty
                 password = "NEXUS_PASSWORD".byProperty
@@ -38,7 +39,7 @@ publishing {
         }
         maven {
             name = "snapshot"
-            url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+            url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
             credentials {
                 username = "NEXUS_USERNAME".byProperty
                 password = "NEXUS_PASSWORD".byProperty
@@ -74,7 +75,7 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("dakshsemwal")
+                        id.set("dakshsemwal ")
                         name.set("Daksh Semwal")
                     }
                 }
