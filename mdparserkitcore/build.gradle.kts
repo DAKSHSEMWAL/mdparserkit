@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
         targetSdk = libs.versions.target.sdk.version.get().toInt()
-        namespace = "com.daksh.mdparserkit.core"
+        namespace = "io.github.dakshsemwal.mdparserkit.core"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
