@@ -1,4 +1,4 @@
-const val PUBLISHING_GROUP = "com.daksh.mdparserkit"
+const val PUBLISHING_GROUP = "io.github.dakshsemwal"
 
 object AppCoordinates {
     const val APP_ID = "com.daksh.mdparserkit.app"
