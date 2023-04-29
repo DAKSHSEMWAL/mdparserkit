@@ -1,4 +1,4 @@
-# MDParserKit Core
+# MDParserKit Core ![image description](./app/src/main/ic_launcher-playstore.png)
 
 MDParserKit Core is a library that provides the functionality to parse markdown text and convert it into an [AnnotatedString](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/AnnotatedString) with appropriate styles.
 
