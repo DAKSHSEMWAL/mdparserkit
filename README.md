@@ -2,7 +2,10 @@
 
 # MDParserKit Core
 
-MDParserKit Core is a library that provides the functionality to parse markdown text and convert it into an [AnnotatedString](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/AnnotatedString) with appropriate styles.
+MDParserKit Core is a library that provides the functionality to parse markdown text and convert it
+into
+an [AnnotatedString](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/AnnotatedString)
+with appropriate styles.
 
 ## Installation
 
@@ -13,6 +16,7 @@ dependencies {
     implementation 'io.github.dakshsemwal:mdparserkitcore:1.0'
 }
 ```
+
 ```kotlin
 dependencies {
     implementation("io.github.dakshsemwal:mdparserkitcore:1.0")
@@ -21,7 +25,10 @@ dependencies {
 
 ## How to Use With JetpackCompose Text
 
-To parse a markdown string and get an [AnnotatedString](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/AnnotatedString), use the `parseMarkdown` function:
+To parse a markdown string and get
+an [AnnotatedString](https://developer.android.com/reference/kotlin/androidx/compose/ui/text/AnnotatedString)
+, use the `parseMarkdown` function:
+
 ```kotlin
 package com.daksh.mdparserkit.app
 
@@ -75,28 +82,30 @@ fun AppMain() {
                     .wrapContentSize(align = Alignment.Center)
                     .padding(horizontal = 8.dp)
             ) {
-                MarkdownTextBox("# Heading 1\n" +
-                        "\n" +
-                        "This is a **bold** word and *this* is an _italic_ word.\n" +
-                        "\n" +
-                        "~~This is a strikethrough text~~\n" +
-                        "\n" +
-                        "## Heading 2\n" +
-                        "\n" +
-                        "- This is a bullet point\n" +
-                        "- Another bullet point\n" +
-                        "- Yet another bullet point\n" +
-                        "\n" +
-                        "### Heading 3\n" +
-                        "\n" +
-                        "1. This is a numbered list item\n" +
-                        "2. Another numbered list item\n" +
-                        "3. Yet another numbered list item\n" +
-                        "\n" +
-                        "**Heading**:This is a pragraph heading\n" +
-                        "#### Heading 4\n" +
-                        "\n" +
-                        "**_This is a bold-italic word_**\n")
+                MarkdownTextBox(
+                    "# Heading 1\n" +
+                            "\n" +
+                            "This is a **bold** word and *this* is an _italic_ word.\n" +
+                            "\n" +
+                            "~~This is a strikethrough text~~\n" +
+                            "\n" +
+                            "## Heading 2\n" +
+                            "\n" +
+                            "- This is a bullet point\n" +
+                            "- Another bullet point\n" +
+                            "- Yet another bullet point\n" +
+                            "\n" +
+                            "### Heading 3\n" +
+                            "\n" +
+                            "1. This is a numbered list item\n" +
+                            "2. Another numbered list item\n" +
+                            "3. Yet another numbered list item\n" +
+                            "\n" +
+                            "**Heading**:This is a pragraph heading\n" +
+                            "#### Heading 4\n" +
+                            "\n" +
+                            "**_This is a bold-italic word_**\n"
+                )
             }
         }
     }
@@ -167,6 +176,7 @@ private fun textMarkDown(
 ## How to Use With Android TextView
 
 ### With data binging it is simple
+
 ```kotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -204,9 +214,11 @@ class MainActivity : AppCompatActivity() {
 }
 
 ```
+
 or
 
-### Without data binging 
+### Without data binging
+
 ```kotlin
 import com.daksh.mdparserkit.core.parseMarkdownUsingSpannableString
 
@@ -244,4 +256,74 @@ class MainActivity : AppCompatActivity() {
         textView.text = spannableString
     }
 }
+```
+
+<img src="./usingxmlview.png" width="720" height="1280">
+
+The resulting `SpannableStringBuilder` will have appropriate styles applied to the markdown syntax.
+
+## Functionality
+
+MDParserKit Core provides the following functions:
+
+### `parseMarkdownUsingSpannableString`
+
+Parses the given markdown text and returns a [SpannableStringBuilder] containing formatted text.
+
+```kotlin
+import androidx.compose.ui.text.AnnotatedString
+import com.daksh.mdparserkit.core.parseMarkdown
+
+/**
+ * @param markdownText the markdown text to parse.
+ * @return the formatted text as a SpannableStringBuilder.
+ */
+fun parseMarkdown(markdownText: String): AnnotatedString
+```
+
+### `textMarkDown`
+
+Converts markdown-style text formatting to [SpannableStringBuilder] with appropriate [CustomTagSpan]s
+and [RelativeSizeSpan]s.
+
+```kotlin
+import android.graphics.Paint
+import android.graphics.Typeface
+import android.text.SpannableStringBuilder
+import android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+import android.text.TextPaint
+import android.text.style.MetricAffectingSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+
+/**
+ * @param inputText The input string of text to parse.
+ * @param resultBuilder A mutable SpannableStringBuilder to build the styled text.
+ * @param textRatio The relative size of the text.
+ * @param bold A boolean indicating whether the entire text should be bolded.
+ */
+fun textMarkDown(
+    inputText: String,
+    resultBuilder: SpannableStringBuilder,
+    textRatio: Float = 1f,
+    bold: Boolean = false
+)
+```
+
+### CustomTagSpan
+
+A custom span that can be used with [TextView] to apply bold, italic, and strike-through formatting
+to text.
+
+```kotlin
+/**
+ * @property isBold A Boolean indicating whether the span should apply bold formatting to the text.
+ * @property isItalic A Boolean indicating whether the span should apply italic formatting to the text.
+ * @property isStrikeThrough A Boolean indicating whether the span should apply strike-through formatting to the text.
+ */
+class CustomTagSpan(
+    private val isBold: Boolean = false,
+    private val isItalic: Boolean = false,
+    private val isStrikeThrough: Boolean = false
+)
 ```

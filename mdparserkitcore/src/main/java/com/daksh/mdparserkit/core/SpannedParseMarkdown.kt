@@ -10,7 +10,7 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 
 /**
- * Parses the given markdown text and returns a SpannableStringBuilder containing formatted text.
+ * Parses the given markdown text and returns a [SpannableStringBuilder] containing formatted text.
  *
  * @param markdownText the markdown text to parse.
  * @return the formatted text as a SpannableStringBuilder.
