@@ -1,7 +1,7 @@
 <img src="./app/src/main/ic_launcher-playstore.png" width="200" height="200">
 
 # MDParserKit Core 
-## version = 1.0.0
+## Version_Number = 1.0.0
 
 MDParserKit Core is a library that provides the functionality to parse markdown text and convert it
 into
