@@ -125,7 +125,7 @@ fun MarkdownTextBox(markdown: String) {
 }
 ```
 
-<img src="./compose_view.png" width="720" height="1280">
+<img src="./compose_view.png" width="240" height="320">
 
 The resulting `AnnotatedString` will have appropriate styles applied to the markdown syntax.
 
@@ -258,7 +258,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-<img src="./usingxmlview.png" width="720" height="1280">
+<img src="./usingxmlview.png" width="240" height="320">
 
 The resulting `SpannableStringBuilder` will have appropriate styles applied to the markdown syntax.
 
