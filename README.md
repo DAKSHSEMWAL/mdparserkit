@@ -1,6 +1,7 @@
 <img src="./app/src/main/ic_launcher-playstore.png" width="200" height="200">
 
-# MDParserKit Core
+# MDParserKit Core 
+## version = 1.0.0
 
 MDParserKit Core is a library that provides the functionality to parse markdown text and convert it
 into
@@ -13,13 +14,13 @@ Add the following dependency to your app-level `build.gradle` file:
 
 ```groovy
 dependencies {
-    implementation 'io.github.dakshsemwal:mdparserkitcore:1.0'
+    implementation 'io.github.dakshsemwal:mdparserkitcore:<version_number>'
 }
 ```
 
 ```kotlin
 dependencies {
-    implementation("io.github.dakshsemwal:mdparserkitcore:1.0")
+    implementation("io.github.dakshsemwal:mdparserkitcore:<version_number>")
 }
 ```
 
