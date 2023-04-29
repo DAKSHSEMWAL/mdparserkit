@@ -271,14 +271,13 @@ MDParserKit Core provides the following functions:
 Parses the given markdown text and returns a [SpannableStringBuilder] containing formatted text.
 
 ```kotlin
-import androidx.compose.ui.text.AnnotatedString
-import com.daksh.mdparserkit.core.parseMarkdown
+import androidx.compose.ui.text.SpannableStringBuilder
 
 /**
  * @param markdownText the markdown text to parse.
  * @return the formatted text as a SpannableStringBuilder.
  */
-fun parseMarkdown(markdownText: String): AnnotatedString
+fun parseMarkdownUsingSpannableString(markdownText: String): SpannableStringBuilder
 ```
 
 ### `textMarkDown`
@@ -287,14 +286,12 @@ Converts markdown-style text formatting to [SpannableStringBuilder] with appropr
 and [RelativeSizeSpan]s.
 
 ```kotlin
-import android.graphics.Paint
 import android.graphics.Typeface
 import android.text.SpannableStringBuilder
 import android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-import android.text.TextPaint
-import android.text.style.MetricAffectingSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import com.daksh.mdparserkit.core.CustomTagSpan
 
 /**
  * @param inputText The input string of text to parse.
