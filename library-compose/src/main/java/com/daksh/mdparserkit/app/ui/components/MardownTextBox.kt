@@ -12,7 +12,6 @@ import com.daksh.mdparserkit.core.parseMarkdown
 
 @Composable
 fun MarkdownTextBox(markdown: String) {
-
     Text(
         text = parseMarkdown(markdown),
         modifier = Modifier.fillMaxWidth()

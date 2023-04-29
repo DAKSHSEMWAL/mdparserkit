@@ -52,7 +52,7 @@ publishing {
             afterEvaluate {
                 artifactId = "mdparserkitcore"
                 groupId = PUBLISHING_GROUP
-                version = "1.0"
+                version = AppCoordinates.LIBRARY_VERSION_CODE
                 if (plugins.hasPlugin("com.android.library")) {
                     from(components["release"])
                 } else {
