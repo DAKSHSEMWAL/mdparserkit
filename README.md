@@ -177,6 +177,10 @@ private fun textMarkDown(
 
 ## How to Use With Android TextView
 
+To parse a markdown string and get
+an [SpannableString](https://developer.android.com/reference/android/text/SpannableString)
+, use the `parseMarkdownUsingSpannableString` function:
+
 ### With data binging it is simple
 
 ```kotlin
@@ -211,7 +215,7 @@ class MainActivity : AppCompatActivity() {
                 "\n" +
                 "**_This is a bold-italic word_**\n"
 
-        binding.markdownText.text = parseMarkdown(markdownContent)
+        binding.markdownText.text = parseMarkdownUsingSpannableString(markdownContent)
     }
 }
 
